@@ -33,6 +33,7 @@ def writeForwardRules(p4info_helper, ingress_sw, dst_ip_addr, dst_mac_addr, port
 def writeSwtracesRules(p4info_helper, ingress_sw, swid):
     table_entry = p4info_helper.buildTableEntry(
         table_name="MyEgress.swtrace",
+        default_action=True,
         action_name="MyEgress.add_swtrace",
         action_params={
             "swid": swid
